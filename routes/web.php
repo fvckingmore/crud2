@@ -18,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 });
 */
 
-Route::get('/', 'MainController@index');
+Auth::routes();
+//Route::get('/', 'MainController@index');
+Route::get('/', 'MainController@index')->middleware('auth');
 Route::prefix('articulo')->group(function() {
 
 	Route::get('create', 'ArticuloController@create');
@@ -28,6 +30,6 @@ Route::prefix('articulo')->group(function() {
 	Route::post('delete', 'ArticuloController@delete');
 
 });
-Auth::routes();
+
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
