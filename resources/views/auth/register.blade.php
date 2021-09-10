@@ -43,7 +43,7 @@
 
 					<div class="col-12">
 						<label>Contraseña</label>
-						<input id="password" type="text" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Contraseña">
+						<input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Contraseña" required autocomplete="new-password">
 
 								@error('password')
 									<span class="invalid-feedback" role="alert">
@@ -53,7 +53,7 @@
 					</div>
 					<div class="col-12">
 						<label>Repita su contraseña</label>
-						<input id="password-confirm" type="text" class="form-control" name="password_confirm" required autocomplete="new-password" placeholder="Repita contraseña" >
+						<input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Repita contraseña" >
 					</div>
 
 					<div class="col-12 text-center">

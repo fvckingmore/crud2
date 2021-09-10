@@ -47,7 +47,13 @@
 	<div class="col-2">
 
 		<a href="{{url('/articulo/create')}}" class="btn btn-primary">Añadir</a>
+	</div>
 
+	<div class="col-2">
+		<form action="{{url('logout')}}" method="POST">
+			@csrf
+			<button type="submit" class="btn btn-danger">Cerrar Sesion</button>
+		</form>
 	</div>
 </div>
 
