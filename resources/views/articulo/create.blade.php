@@ -25,8 +25,10 @@
 				<input type="number" class="form-control" id="precio" name="precio" >
 			</div>
 
-			<button type="submit" class="btn btn-primary">Guardar</button>
-			<a href="{{url('/')}}" class="btn btn-danger">Cancelar</a>
+			<div class="text-center">
+				<button type="submit" class="btn btn-primary">Guardar</button>
+				<a href="{{url('/')}}" class="btn btn-danger">Cancelar</a>
+			</div>
 		</form>
 	</div>
 </div>
