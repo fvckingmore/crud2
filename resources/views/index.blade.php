@@ -14,6 +14,8 @@
 					<th scope="col">Descripcion</th>
 					<th scope="col">Cantidad</th>
 					<th scope="col">Precio</th>
+					<th scope="col"></th>
+					<th scope="col"></th>
 				</tr>
 			</thead>
 			<tbody>
