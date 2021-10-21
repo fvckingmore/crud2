@@ -20,8 +20,8 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 //Route::get('/', 'MainController@index');
-Route::get('/', 'MainController@index')->middleware('auth');
-Route::prefix('articulo')->group(function() {
+Route::get('/', 'MainController@index');
+/*Route::prefix('articulo')->group(function() {
 
 	Route::get('create', 'ArticuloController@create');
 	Route::post('create', 'ArticuloController@add');
@@ -29,7 +29,7 @@ Route::prefix('articulo')->group(function() {
 	Route::post('{id}/edit', 'ArticuloController@update');
 	Route::post('delete', 'ArticuloController@delete');
 
-});
+});*/
 
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
