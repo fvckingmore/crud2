@@ -10,9 +10,15 @@ class ArticuloComponent extends Component
 {
 	use WithPagination;
 
-	protected $paginationTheme = 'bootstrap';
 	public $formType;
 	public $codigo, $desc, $cantidad, $precio;
+	protected $paginationTheme = 'bootstrap';
+	protected $rules = [
+		'codigo' => 'required', 
+		'desc' => 'required', 
+		'cantidad' => 'required', 
+		'precio' => 'required', 
+	];
 
 	public function render()
 	{
@@ -36,6 +42,12 @@ class ArticuloComponent extends Component
 		$this->cantidad = "";
 		$this->precio = "";
 		$this->dispatchBrowserEvent('closeForm');
+	}
+
+	public function store() {
+		$val = $this->validate();
+		Articulo::create($val);
+		$this->closeForm();
 	}
 
 }

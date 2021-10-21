@@ -56,7 +56,7 @@
 			</div>
 			<div class="modal-footer">
 				<button wire:click.prevent="closeForm" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-				<button type="button" class="btn btn-primary">Añadir</button>
+				<button wire:click.prevent="store" type="button" class="btn btn-primary">Añadir</button>
 			</div>
 		</div>
 	</div>
