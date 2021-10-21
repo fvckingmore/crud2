@@ -28,7 +28,7 @@
 							<button class="btn btn-info" >Editar</button>
 						</th>
 						<th class="col-1">
-							<button class="btn btn-danger" >Eliminar</button>
+							<button wire:click.prevent="delete({{ $articulo->id }})" class="btn btn-danger" >Eliminar</button>
 						</th>
 					</tr>
 					@endforeach

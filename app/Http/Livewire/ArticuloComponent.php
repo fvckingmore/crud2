@@ -50,4 +50,8 @@ class ArticuloComponent extends Component
 		$this->closeForm();
 	}
 
+	public function delete($id) {
+		Articulo::destroy($id);		
+	}
+
 }

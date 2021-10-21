@@ -13,7 +13,7 @@
 			</div>
 			<div class="modal-body">
 
-				<form action="{{url('articulo/create')}}" method="POST">
+				<form wire:submit.prevent="submit" method="POST">
 					@csrf
 					<div class="mb-3">
 						<label class="form-label col-4">Codigo</label>
