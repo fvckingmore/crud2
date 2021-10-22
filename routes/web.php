@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 //Route::get('/', 'MainController@index');
-Route::get('/', 'MainController@index');
+Route::get('/', 'MainController@index')->middleware('auth');
 /*Route::prefix('articulo')->group(function() {
 
 	Route::get('create', 'ArticuloController@create');

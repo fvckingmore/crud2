@@ -11,7 +11,7 @@ class ArticuloComponent extends Component
 	use WithPagination;
 
 	public $formType;
-	public $codigo, $desc, $cantidad, $precio;
+	public $art, $codigo, $desc, $cantidad, $precio;
 	protected $paginationTheme = 'bootstrap';
 	protected $rules = [
 		'codigo' => 'required', 
@@ -27,12 +27,13 @@ class ArticuloComponent extends Component
 		;
 	}
 
-	public function openForm($type) {
+	public function openForm($type, Articulo $articulo = null) {
 		$this->formType = $type;
-		$this->codigo = "";
-		$this->desc = "";
-		$this->cantidad = "";
-		$this->precio = "";
+		$this->art = $articulo->id;
+		$this->codigo = $articulo->codigo;
+		$this->desc = $articulo->desc;
+		$this->cantidad = $articulo->cantidad;
+		$this->precio = $articulo->precio;
 		$this->dispatchBrowserEvent('openForm');
 	}
 
@@ -46,12 +47,23 @@ class ArticuloComponent extends Component
 
 	public function store() {
 		$val = $this->validate();
-		Articulo::create($val);
+
+		if($this->formType == 0) {
+			Articulo::create($val);
+
+		} else if($this->formType == 1) {
+			Articulo::find($this->art)->update($val);
+		}
+
 		$this->closeForm();
 	}
 
 	public function delete($id) {
 		Articulo::destroy($id);		
+	}
+
+	public function logout() {
+		return redirect('logout');
 	}
 
 }

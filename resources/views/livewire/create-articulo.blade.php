@@ -4,11 +4,8 @@
 			<div class="modal-header">
 
 				<h5 class="modal-title" id="exampleModalLabel">
-					@if($formType == 0)
-					Añadir
-					@elseif($formType = 1)
-					Editar
-					@endif
+					{{ $formType == 0  ? 'Añadir' : 'Editar' }}
+
 				</h5>
 			</div>
 			<div class="modal-body">
@@ -56,7 +53,9 @@
 			</div>
 			<div class="modal-footer">
 				<button wire:click.prevent="closeForm" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-				<button wire:click.prevent="store" type="button" class="btn btn-primary">Añadir</button>
+				<button wire:click.prevent="store()" type="button" class="btn btn-primary">
+					{{ $formType == 0  ? 'Guardar' : 'Actualizar' }}
+			</button>
 			</div>
 		</div>
 	</div>
